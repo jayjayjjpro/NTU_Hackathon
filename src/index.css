@@ -29,6 +29,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: linear-gradient(to right, #2b2b2b, #3a3a3a);
 }
 
 h1 {
@@ -65,5 +66,45 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+
+  body {
+    background: linear-gradient(to right, #e0f2f1, #bbdefb);
+  }
+  
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #e0e0e0; 
+    background-color: #1a1a1a;
+  }
+
+  #root {
+    background-color: #2b2b2b; 
+    border-color: #646cff; 
+    box-shadow: 0 0 10px rgba(255,255,255,0.1); 
+  }
+
+  a {
+    color: #9c88ff; 
+  }
+
+  a:hover {
+    color: #8186d5; 
+  }
+
+  button {
+    background-color: #3d3d3d; 
+    color: #e0e0e0; 
+    border-color: #646cff; 
+  }
+
+  button:hover {
+    border-color: #9c88ff; 
+  }
+
+  body {
+    background: linear-gradient(to right, #2b2b2b, #3a3a3a); /* Gradient background in dark mode */
   }
 }

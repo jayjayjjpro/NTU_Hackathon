@@ -4,6 +4,7 @@ import './App.css';
 
 const App = () => {
     const [selectedFile, setSelectedFile] = useState(null);
+    const [fileHash, setFileHash] = useState(null);
 
     const onFileChange = event => {
       const file = event.target.files[0];
@@ -24,7 +25,14 @@ const App = () => {
             selectedFile.name
         );
         console.log(selectedFile);
-        axios.post("api/uploadfile", formData);
+        axios.post("api/uploadfile", formData)
+        .then((response) => {
+            console.log('Hash:', response.data.hash);
+            setFileHash(response.data.hash);
+        })
+        .catch((error) => {
+            console.error('Error uploading file:', error);
+        });
     };
 
     const fileData = () => {
@@ -58,6 +66,12 @@ const App = () => {
                 <button onClick={onFileUpload}>Upload!</button>
             </div>
             {fileData()}
+            {fileHash && (
+            <div>
+                <h2>File Hash:</h2>
+                <p>{fileHash}</p>
+            </div>
+        )}
         </div>
     );
 }
