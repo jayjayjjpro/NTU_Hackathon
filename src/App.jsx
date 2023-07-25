@@ -25,10 +25,10 @@ const App = () => {
             selectedFile.name
         );
         console.log(selectedFile);
-        axios.post("api/uploadfile", formData)
+        axios.post("https://server-upload-hsec.onrender.com/file/upload", formData)
         .then((response) => {
-            console.log('Hash:', response.data.hash);
-            setFileHash(response.data.hash);
+            console.log('Hash:', response.data);
+            setFileHash(response.data);
         })
         .catch((error) => {
             console.error('Error uploading file:', error);
