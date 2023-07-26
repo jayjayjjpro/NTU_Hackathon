@@ -20,7 +20,7 @@ const App = () => {
     const onFileUpload = () => {
         const formData = new FormData();
         formData.append(
-            "myFile",
+            "file",
             selectedFile,
             selectedFile.name
         );
