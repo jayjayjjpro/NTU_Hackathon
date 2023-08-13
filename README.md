@@ -1,4 +1,4 @@
-# NTU_Hackathon
+# NTU_Hackathon with ChatGPT-Like Technologies 
 # Contributors
 - Wee Hung
 - Augustine
